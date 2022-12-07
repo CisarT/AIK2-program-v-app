@@ -1,0 +1,15 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome @Model.Name</h1>
+</div>
+
+<div class="d-grid gap-2 col-6 mx-auto">
+    <a class="btn btn-outline-secondary" asp-page="/Forms/Encrypt">Go to Encrypth</a>
+    <a class="btn btn-outline-secondary" asp-page="/Forms/Descrypt">Go to Descrypth</a>
+</div>
+

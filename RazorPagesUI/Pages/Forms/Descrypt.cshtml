@@ -1,0 +1,31 @@
+﻿@page
+@model RazorPagesUI.Pages.Forms.DescryptModel
+@{
+}
+
+<form class="m-3" method="post">
+    <div class="text-center d-grid gap-2 col-6 mx-auto">
+        <h4 class="display-4">Decrypt</h4>
+        <div class="col-auto m-2">
+            <label>Encrypted Text:</label>
+            <input type="text" class="form-control" name="cipherText" required/>
+        </div>
+        <div class="col-auto m-2">
+            <label>Decrypted Text:</label>
+            <input type="text" class="form-control" name="clearText" value="@TempData["DecryptedText"]" readonly />
+        </div>
+        <div class="col-auto m-2">
+            <input class="btn btn-outline-secondary" type="submit" value="Decrypt" asp-page-handler="Decrypt" />
+        </div>
+    </div>
+</form>
+<form id="form1" runat="server">
+    <div>
+        <asp:Button ID="Button1" runat="server" Text="Click here" OnClick="Button1_Click" />
+    </div>
+</form>
+<br />
+<asp:Label ID="Label1" runat="server"></asp:Label>
+@{
+    TempData.Keep("EncryptedText");
+}
